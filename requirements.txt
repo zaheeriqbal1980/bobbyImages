@@ -1,2 +1,5 @@
 leafmap
-tkinter
+requests
+PIL
+filedailog
+TK
