@@ -10,6 +10,8 @@ from PIL import Image
 import os
 from tkinter import filedialog
 from tkinter import Tk
+import streamlit as st
+import streamlit.components.v1 as components
 
 def is_valid_image_url(url):
     try:
@@ -62,6 +64,9 @@ if img1 and img2:
         starting_position=50,
         out_html='image_comparison.html'
     )
+    HtmlFile = open("image_comparison.html", 'r', encoding='utf-8')
+    source_code = HtmlFile.read() 
+    components.html(source_code,width=600,height=600)
 else:
     print("Invalid or no image files selected.")
 
